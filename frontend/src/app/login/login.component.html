@@ -1,0 +1,62 @@
+<div class="container mt-5 d-flex justify-content-center">
+  <div class="col-12 col-sm-10 col-md-6 col-lg-4">
+    <div class="card rounded">
+      <div class="card-body">
+        <h2 class="mb-4">Login</h2>
+
+        <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              [(ngModel)]="email"
+              (blur)="validateEmail()"
+              required
+              [ngClass]="{ 'is-invalid': errors.email }"
+            />
+            <div class="invalid-feedback" *ngIf="errors.email">{{ errors.email }}</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              [(ngModel)]="password"
+              (blur)="validatePassword()"
+              required
+              [ngClass]="{ 'is-invalid': errors.password }"
+            />
+            <div class="invalid-feedback" *ngIf="errors.password">{{ errors.password }}</div>
+          </div>
+
+          <div class="text-danger mb-2 text-center" *ngIf="errors.general">
+            {{ errors.general }}
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-login w-100"
+            [disabled]="!loginForm.form.valid || errors.email || errors.password"
+          >
+            Login
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="mt-3 text-center">
+      Don't have an account yet?
+      <a routerLink="/register" class="btn btn-link">Register</a>
+    </div>
+  </div>
+
+
+
+</div>
+

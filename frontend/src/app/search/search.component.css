@@ -1,0 +1,253 @@
+
+
+.card-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem; 
+  padding: 1rem; 
+}
+
+.display-container {
+  width: 100%;
+  text-align: center;
+  z-index: 1050;
+  pointer-events: none;
+}
+
+
+
+.key-symbol {
+  opacity: 1;
+  
+  transition: opacity 0.5s ease-in-out; 
+  font-size: 48px; 
+  font-weight: bold; 
+  color: white; 
+  text-align: center; 
+
+  display: inline-block; 
+  border-radius: 0.5rem; 
+  background-color: gray; 
+  width: 80px; 
+  height: 80px;
+  line-height: 80px;
+}
+
+.key-symbol.fade-out {
+  opacity: 0;
+}
+
+
+.card {
+  flex: 0 0 auto;
+  width: 250px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease; 
+  border: none;
+  border-radius: 0.5rem;
+  overflow: hidden; 
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+
+.card:hover .text-start {
+  background-color: #004d90;
+}
+
+.card.selected .text-start {
+  background-color: #004d90;
+}
+
+.text-start {
+  color: white; 
+  padding: 6px 10px; 
+  overflow: hidden;
+  background-color: #112b3c;;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+
+
+
+
+.artist-name-container {
+  background-color: #1a3d5b;
+  color: white;
+  padding: 6px 0;
+  transition: background-color 0.3s ease;
+  border-radius: .25;
+}
+
+
+/* change background color on card hover */
+.card:hover .artist-name-container {
+  background-color: #004d90; 
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border: 1px solid #d3d3d3; 
+}
+
+/* .card-body {
+  background-color: #1a3d5b;
+  color: white;
+  padding-bottom: 1%;
+}
+  */
+.btn-search {
+  background-color: #004d90;
+  color: white;
+  border: none;
+}
+
+/* .btn-search:hover {
+  background-color: #112b3c;
+  color: white;
+} */
+
+.btn-search:disabled {
+  background-color: #004d90;
+  color: white;
+  opacity: 0.65; 
+  cursor: not-allowed;
+}
+
+
+.artwork-card {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.artwork-card-body {
+  padding: 1rem;
+}
+
+.artwork-card-info {
+  border: 1px solid #ddd;
+}
+
+.artwork-card-footer .btn-outline-primary {
+  background-color: #f5f5f5;
+  border-color: #f5f5f5;
+  color: black;
+}
+
+.artwork-card-footer .btn-outline-primary:hover {
+  background-color: #004d90;
+  border-color: #004d90;
+  color: white;
+}
+
+.modal-card {
+  border: 1px solid grey;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+ 
+}
+
+.modal-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+.modal-card-text {
+  padding: 1rem;
+}
+
+.favorite-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background-color: #004d90; 
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 1rem;
+  z-index: 10;
+}
+
+.favorite-btn .bi {
+  font-size: 1rem;
+}
+
+.favorite-btn.favorited {
+  color: #ffc107;
+}
+
+.star-only-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  color: #ffc107; 
+  font-size: 1.25rem;
+}
+
+.star-only-btn:hover {
+  opacity: 0.8;
+}
+
+.star-only-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+
+.similar-favorite-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background-color: #004d90;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 1rem;
+  z-index: 10;
+}
+
+.similar-favorite-btn .bi {
+  font-size: 1rem;
+}
+
+.similar-favorite-btn.favorited {
+  color: #ffc107;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
