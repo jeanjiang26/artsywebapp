@@ -1,0 +1,18 @@
+runtime: nodejs20
+instance_class: F2
+
+entrypoint: node ./backend/index.js
+
+env_variables:
+  ARTSY_XAPP_TOKEN: "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsInN1YmplY3RfYXBwbGljYXRpb24iOiI1ZDY2ZmQzZi1jMTA5LTQ5YzYtYmUyMi01M2FlNzk2OWRlNDkiLCJleHAiOjE3NDczNDA0MTgsImlhdCI6MTc0NjczNTYxOCwiYXVkIjoiNWQ2NmZkM2YtYzEwOS00OWM2LWJlMjItNTNhZTc5NjlkZTQ5IiwiaXNzIjoiR3Jhdml0eSIsImp0aSI6IjY4MWQxMjAyMTkzOGI1MGIwZTkzNjVkMCJ9.U8CWhknx-DazlKTW0o5-wC1L7A_NRuSlMLDivd32UgE"
+  
+handlers:
+  - url: /(.*\.(gif|png|jpg|css|js|ico|html))
+    static_files: frontend/dist/frontend/browser/\1
+    upload: frontend/dist/frontend/browser/.*
+
+  - url: /api/.*
+    script: auto
+
+  - url: /.*
+    script: auto

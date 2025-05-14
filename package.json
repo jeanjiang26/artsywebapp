@@ -1,0 +1,20 @@
+{
+    "name": "assignment3",
+    "version": "1.0.0",
+    "description": "CSCI 571 Assignment 3",
+    "main": "backend/index.js",
+    "scripts": {
+      "start": "node backend/index.js"
+    },
+    "dependencies": {
+      "express": "^4.21.2",
+      "mongoose": "^8.12.2",
+      "cors": "^2.8.5",
+      "cookie-parser": "^1.4.7",
+      "dotenv": "^16.4.7",
+      "axios": "^1.8.4",
+      "bcrypt": "^5.1.1",
+      "jsonwebtoken": "^9.0.2",
+      "mongodb": "^6.15.0"
+    }
+  }
